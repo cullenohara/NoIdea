@@ -19,11 +19,6 @@ public class NPC : MonoBehaviour {
 		farewell.Add("See you soon.");
 		farewell.Add("Fuck off!");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 	void OnTriggerEnter(Collider other)
 	{
@@ -31,6 +26,8 @@ public class NPC : MonoBehaviour {
 		{
 			string tempMessage = greeting[Random.Range(0, greeting.Count)] + " " + other.GetComponent<Player>().GetName;
 			other.GetComponent<Player>().ReceiveMessage(npcName, tempMessage, textColor.ToHexStringRGB());
+			Item tempItem = new Item(0, "Gold", "Gold coin", Resources.Load<Sprite>("Gold"), Item.ItemType.Consumable, 5);
+			other.GetComponent<Inventory>().AddItem(tempItem);
 		}
 	}
 
