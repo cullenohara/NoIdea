@@ -70,6 +70,7 @@ public class Inventory : MonoBehaviour {
 				if(slot.isEmpty == true)
 				{
 					slot.AddToStack(item);
+					player.ReceiveMessage("[BACKPACK]", "You found " + item.itemName, "DAE610");
 					emptySlots--;
 					break;
 				}

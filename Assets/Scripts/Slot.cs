@@ -12,6 +12,8 @@ public class Slot : MonoBehaviour {
 	public bool isFull = false;
 	public Stack<Item> slotItem = new Stack<Item>();
 
+	private Vector2 mousePosition;
+
 	public void AddToStack(Item item)
 	{
 		slotItem.Push(item);
@@ -41,5 +43,10 @@ public class Slot : MonoBehaviour {
 		{
 			isFull = true;
 		}
+	}
+
+	void Update ()
+	{
+		mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
 	}
 }

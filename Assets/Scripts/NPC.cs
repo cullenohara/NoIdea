@@ -24,7 +24,7 @@ public class NPC : MonoBehaviour {
 	{
 		if(other.tag == "Player")
 		{
-			string tempMessage = greeting[Random.Range(0, greeting.Count)] + " " + other.GetComponent<Player>().GetName;
+			string tempMessage = greeting[Random.Range(0, greeting.Count)];
 			other.GetComponent<Player>().ReceiveMessage(npcName, tempMessage, textColor.ToHexStringRGB());
 			Item tempItem = new Item(0, "Gold", "Gold coin", Resources.Load<Sprite>("Gold"), Item.ItemType.Consumable, 5);
 			other.GetComponent<Inventory>().AddItem(tempItem);
